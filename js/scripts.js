@@ -1,35 +1,32 @@
 //business logic
 
-function getRandomizer(bottom, top) {
-  return function() {
-      return Math.floor( Math.random() * ( 1 + top - bottom ) ) + bottom;
-  }
-}
-var rollDie = getRandomizer( 1, 6 );
-
-var results = ""
-for ( var i = 0; i<1; i++ ) {
-  results += rollDie() + " ";
+function rollDie() {
+  return Math.floor( Math.random() * ( 1 + 6 - 1 ) ) + 1;
 }
 
-console.log(results);
-
-
+var resultsArray1 = [];
+var resultsArray2 = [];
 
 
 //front-end logic
 
 $(document).ready(function() {
-  $("button#roll").click(function(event) {
-    event.preventDefault();
+  $("button#roll1").click(function() {
 
+    var thisRoll = rollDie();
+    resultsArray1.push(" " + thisRoll);
 
-    $("span.currentScore").text(rollDie());
+    $("span.currentScore1").text(thisRoll);
+    $("span.roundScore1").text(resultsArray1);
   });
 
-  // $("button#hold").submit(function(event) {
-  //   event.preventDefault();
-  //
-  //
+
+  $("button#roll2").click(function() {
+
+    var thisRoll = rollDie();
+    resultsArray2.push(" " + thisRoll);
+
+    $("span.currentScore2").text(thisRoll);
+    $("span.roundScore2").text(resultsArray2);
   });
-// });
+});
