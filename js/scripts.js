@@ -6,6 +6,8 @@ function rollDie() {
 
 var resultsArray1 = [];
 var resultsArray2 = [];
+var totalArray1 = [];
+var totalArray2 = [];
 
 
 
@@ -40,4 +42,22 @@ $(document).ready(function() {
     $("span.currentScore2").text(thisRoll);
     $("span.roundScore2").text(resultsArray2 + " " + "=" + " " + arraySum2);
   });
+
+  $("button#hold1").click(function() {
+
+    totalArray1.push(arraySum1);
+
+    var totalSum1 = 0;
+    for(var i=0; i<totalArray1.length; i++){
+    totalSum1 += parseInt(totalArray1[i]);
+  };
+
+  $("span.playerOneTotal").text(totalSum1);
+
+  });
+
+
+
+
+
 });
