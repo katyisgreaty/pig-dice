@@ -1,10 +1,14 @@
+.playerTwo {
+  display: none;
+}
+
 .reset {
   margin-top: 100px;
 }
 
 .buttons {
   text-align: center;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 .center {
@@ -12,13 +16,31 @@
 }
 
 .round-score {
-  margin-top: 80px;
+  margin-top: 30px;
 }
 
 .dice {
-  margin-top: 85px;
+  margin-top: 50px;
 }
 
-/*.playerTwo {
-  display: none;
-}*/
+.profile1 {
+background-image: url("http://newmediarockstars.com/wp-content/uploads/2013/07/norm-1.png");
+background-position: bottom;
+background-size: 100%;
+min-height: 400px;
+text-align: center;
+padding-top: 360px;
+}
+
+.profile2 {
+background-image: url("http://momsandmojitos.com/blog/wp-content/uploads/2014/07/some-cute-pugs-poses-on-instagram-10.png");
+background-position: bottom;
+background-size: 100%;
+min-height: 400px;
+text-align: center;
+padding-top: 360px;
+}
+
+.bold {
+  font-size: 50px;
+}

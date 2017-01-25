@@ -37,6 +37,8 @@ $(document).ready(function() {
     $("span.currentScore1").text("");
     $("span.roundScore1").text("");
     $("span.playerOneTotal").text(playerOne.total);
+    $(".playerOne").toggle();
+    $(".playerTwo").toggle();
 
   });
 
@@ -54,7 +56,8 @@ $(document).ready(function() {
     $("span.currentScore2").text("");
     $("span.roundScore2").text("");
     $("span.playerTwoTotal").text(playerTwo.total);
-
+    $(".playerOne").toggle();
+    $(".playerTwo").toggle();
   });
 
 
