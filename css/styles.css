@@ -3,12 +3,13 @@
 }
 
 .reset {
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 .buttons {
   text-align: center;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .center {
@@ -33,11 +34,21 @@
 
 .round-score {
   margin-top: 30px;
+  font-family: 'Josefin Slab', serif;
+  font-weight: bolder;
   font-size: 30px;
 }
 
+.roundScore1, .roundScore2 {
+  font-family: 'Josefin Slab', serif;
+  font-weight: bolder;
+}
+
 .dice {
-  margin-top: 50px;
+  margin-top: 10px;
+  font-family: 'Josefin Slab', serif;
+  font-weight: bolder;
+  font-size: 30px;
 }
 
 .profile1 {
@@ -47,6 +58,9 @@ background-size: 100%;
 min-height: 400px;
 text-align: center;
 padding-top: 360px;
+font-family: 'Josefin Slab', serif;
+font-weight: bolder;
+font-size: 38px;
 }
 
 .profile2 {
@@ -56,6 +70,9 @@ background-size: 100%;
 min-height: 400px;
 text-align: center;
 padding-top: 360px;
+font-family: 'Josefin Slab', serif;
+font-weight: bolder;
+font-size: 38px;
 }
 
 .bold {
@@ -65,6 +82,7 @@ padding-top: 360px;
 .textColor1 {
   color: red;
   font-size: 40px;
+  margin-bottom: 5px;
 }
 
 .textColor2 {
@@ -73,5 +91,27 @@ padding-top: 360px;
 }
 
 .space {
-  min-height: 60px;
+  min-height: 50px;
+}
+
+.spaceSpecial {
+  min-height: 70px;
+}
+
+.currentScore1 {
+  font-family: 'Fontdiner Swanky', cursive;
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.currentScore2 {
+  font-family: 'Fontdiner Swanky', cursive;
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.playerOneTotal, .playerTwoTotal {
+  font-family: 'Fontdiner Swanky', cursive;
+  font-size: 50px;
+  font-weight: bolder;
 }
