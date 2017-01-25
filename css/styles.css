@@ -12,5 +12,13 @@
 }
 
 .round-score {
-  margin-top: 150px;
+  margin-top: 80px;
+}
+
+.dice {
+  margin-top: 85px;
+}
+
+.playerTwo {
+  display: none;
 }
