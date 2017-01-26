@@ -78,10 +78,12 @@ $(document).ready(function() {
         $("button.okayTwo").hide();
         playerTwo.resultsArray = [];
       });
-    };
+
+    } else {
     playerTwo.resultsArray.push(" " + thisRoll);
     $("span.currentScore2").text(thisRoll);
     $("span.roundScore2").text(playerTwo.resultsArray + " " + "=" + " " + playerTwo.calcSum());
+    }
   });
 
 
