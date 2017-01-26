@@ -6,10 +6,15 @@
   margin-top: 60px;
 }
 
+#hold1, #hold2, #roll1, #roll2, #newgame {
+  font-size: 20px;
+}
+
 .buttons {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 20px;
+  font-family: 'Josefin Slab', serif;
 }
 
 .center {
@@ -61,6 +66,7 @@ padding-top: 360px;
 font-family: 'Josefin Slab', serif;
 font-weight: bolder;
 font-size: 38px;
+border-radius: 20px;
 }
 
 .profile2 {
@@ -73,6 +79,7 @@ padding-top: 360px;
 font-family: 'Josefin Slab', serif;
 font-weight: bolder;
 font-size: 38px;
+border-radius: 20px;
 }
 
 .bold {
@@ -114,4 +121,8 @@ font-size: 38px;
   font-family: 'Fontdiner Swanky', cursive;
   font-size: 50px;
   font-weight: bolder;
+}
+
+.roll, .hold {
+
 }
