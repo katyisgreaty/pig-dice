@@ -40,20 +40,16 @@ $(document).ready(function() {
     $("span.currentScore1").text("");
     $("span.roundScore1").text("");
     $("span.playerOneTotal").text(playerOne.total);
-    if (playerOne.total >= 100) {
-      $("span.playerOneTotal").text(playerOne.total);
-      $("span.playerOneTotal").text("");
-      $("span.playerTwoTotal").text("");
-      $("span.currentScore1").text("");
-      $("span.currentScore2").text("");
-      $("span.roundScore1").text("");
-      $("span.roundScore").text("");
-      alert ("Player 1 wins with a score of " + playerOne.total + "!!!");
-      playerOne.total = 0;
-      playerTwo.total = 0;
-    }
     $(".playerOne").toggle();
     $(".playerTwo").toggle();
+    if (playerOne.total >= 100) {
+      $("span.playerOneTotal").text(playerOne.total);
+      $("#playerOneWins").show();
+      playerOne.total = 0;
+      playerTwo.total = 0;
+      $("button#roll2").hide();
+      $("button#hold2").hide();
+    }
   });
 
   $("button#roll2").click(function() {
@@ -72,25 +68,30 @@ $(document).ready(function() {
     $(".playerOne").toggle();
     $(".playerTwo").toggle();
     if (playerTwo.total >= 100) {
-      $("span.playerOneTotal").text("");
-      $("span.playerTwoTotal").text("");
-      $("span.currentScore1").text("");
-      $("span.currentScore2").text("");
-      $("span.roundScore1").text("");
-      $("span.roundScore").text("");
-      alert ("Player 2 wins with a score of " + playerTwo.total + "!!!");
+      $("span.playerTwoTotal").text(playerTwo.total);
+      $("#playerTwoWins").show();
       playerOne.total = 0;
       playerTwo.total = 0;
-      };
+      $("button#roll1").hide();
+      $("button#hold1").hide();
+    }
     });
 
 
-  $("#newgame").click(function(){
+  $(".newgame").click(function(){
       $("span.playerOneTotal").text("");
       $("span.playerTwoTotal").text("");
       $("span.currentScore1").text("");
       $("span.currentScore2").text("");
       $("span.roundScore1").text("");
       $("span.roundScore").text("");
+      $("span#playerOneWins").hide();
+      $("span#playerTwoWins").hide();
+      $("button#roll1").show();
+      $("button#hold1").show();
+      $("button#roll2").show();
+      $("button#hold2").show();
+      playerOne.total = 0;
+      playerTwo.total = 0;
   });
 });

@@ -2,11 +2,19 @@
   display: none;
 }
 
+#playerOneWins {
+  display: none;
+}
+
+ #playerTwoWins {
+   display: none;
+ }
+
 .reset {
   margin-top: 60px;
 }
 
-#hold1, #hold2, #roll1, #roll2, #newgame {
+#hold1, #hold2, #roll1, #roll2, .newgame {
   font-size: 20px;
 }
 
