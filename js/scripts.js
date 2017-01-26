@@ -18,7 +18,6 @@ Player.prototype.calcSum = function() {
   return arraySum;
 }
 
-
 //front-end logic
 
 $(document).ready(function() {
@@ -29,22 +28,24 @@ $(document).ready(function() {
     var thisRoll = rollDie();
     if (thisRoll === 1) {
       $("span.roundScore1").text("You rolled a 1, your turn is over!");
+
       $("button.okayOne").show();
-      $("button.okayOne").click(function(){
-        $(".playerOne").toggle();
-        $(".playerTwo").toggle();
-        $("span.roundScore1").text("");
-        $("span.currentScore1").text("");
-        $("button.okayOne").hide();
-        playerOne.resultsArray = [];
-      });
-
-
+      playerOne.resultsArray = [];
+      $("span.currentScore1").text("1");
     } else {
-    playerOne.resultsArray.push(" " + thisRoll);
-    $("span.currentScore1").text(thisRoll);
-    $("span.roundScore1").text(playerOne.resultsArray + " " + "=" + " " + playerOne.calcSum());
+      playerOne.resultsArray.push(" " + thisRoll);
+      $("span.currentScore1").text(thisRoll);
+      $("span.roundScore1").text(playerOne.resultsArray + " " + "=" + " " + playerOne.calcSum());
     }
+  });
+  $("button.okayOne").click(function(){
+    playerOne.total += playerOne.calcSum();
+    $("span.playerOneTotal").text(playerOne.total);
+    $(".playerOne").toggle();
+    $(".playerTwo").toggle();
+    $("span.roundScore1").text("");
+    $("span.currentScore1").text("");
+    $("button.okayOne").hide();
   });
 
   $("button#hold1").click(function() {
@@ -53,6 +54,7 @@ $(document).ready(function() {
     $("span.currentScore1").text("");
     $("span.roundScore1").text("");
     $("span.playerOneTotal").text(playerOne.total);
+    $("button.okayOne").hide();
     $(".playerOne").toggle();
     $(".playerTwo").toggle();
     if (playerOne.total >= 100) {
@@ -70,20 +72,23 @@ $(document).ready(function() {
     if (thisRoll === 1) {
       $("span.roundScore2").text("You rolled a 1, your turn is over!");
       $("button.okayTwo").show();
-      $("button.okayTwo").click(function(){
-        $(".playerOne").toggle();
-        $(".playerTwo").toggle();
-        $("span.roundScore2").text("");
-        $("span.currentScore2").text("");
-        $("button.okayTwo").hide();
-        playerTwo.resultsArray = [];
-      });
-
+      playerTwo.resultsArray = [];
+      $("span.currentScore2").text("1");
     } else {
-    playerTwo.resultsArray.push(" " + thisRoll);
-    $("span.currentScore2").text(thisRoll);
-    $("span.roundScore2").text(playerTwo.resultsArray + " " + "=" + " " + playerTwo.calcSum());
+      playerTwo.resultsArray.push(" " + thisRoll);
+      $("span.currentScore2").text(thisRoll);
+      $("span.roundScore2").text(playerTwo.resultsArray + " " + "=" + " " + playerTwo.calcSum());
     }
+  });
+
+  $("button.okayTwo").click(function(){
+    playerTwo.total += playerTwo.calcSum();
+    $("span.playerTwoTotal").text(playerTwo.total);
+    $(".playerOne").toggle();
+    $(".playerTwo").toggle();
+    $("span.roundScore2").text("");
+    $("span.currentScore2").text("");
+    $("button.okayTwo").hide();
   });
 
 
@@ -93,6 +98,7 @@ $(document).ready(function() {
     $("span.currentScore2").text("");
     $("span.roundScore2").text("");
     $("span.playerTwoTotal").text(playerTwo.total);
+    $("button.okayTwo").hide();
     $(".playerOne").toggle();
     $(".playerTwo").toggle();
     if (playerTwo.total >= 100) {
@@ -103,23 +109,23 @@ $(document).ready(function() {
       $("button#roll1").hide();
       $("button#hold1").hide();
     }
-    });
+  });
 
 
   $(".newgame").click(function(){
-      $("span.playerOneTotal").text("");
-      $("span.playerTwoTotal").text("");
-      $("span.currentScore1").text("");
-      $("span.currentScore2").text("");
-      $("span.roundScore1").text("");
-      $("span.roundScore").text("");
-      $("span#playerOneWins").hide();
-      $("span#playerTwoWins").hide();
-      $("button#roll1").show();
-      $("button#hold1").show();
-      $("button#roll2").show();
-      $("button#hold2").show();
-      playerOne.total = 0;
-      playerTwo.total = 0;
+    $("span.playerOneTotal").text("");
+    $("span.playerTwoTotal").text("");
+    $("span.currentScore1").text("");
+    $("span.currentScore2").text("");
+    $("span.roundScore1").text("");
+    $("span.roundScore").text("");
+    $("span#playerOneWins").hide();
+    $("span#playerTwoWins").hide();
+    $("button#roll1").show();
+    $("button#hold1").show();
+    $("button#roll2").show();
+    $("button#hold2").show();
+    playerOne.total = 0;
+    playerTwo.total = 0;
   });
 });
