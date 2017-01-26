@@ -67,6 +67,7 @@ $(document).ready(function() {
     $("span.currentScore1").text("");
     $("button.okayOne").hide();
     $("span.roundColor").hide();
+    return (Computer());
   });
 
   $("button#hold1").click(function() {
@@ -92,6 +93,7 @@ $(document).ready(function() {
       $("button#roll3").hide();
       $("button#hold3").hide();
     }
+    return (Computer());
   });
 
   $("button#roll2").click(function() {
@@ -154,16 +156,13 @@ $(document).ready(function() {
 
 
 
-  //COMPUTER FUNCTIONS
-
-  $("button#roll3").click(function() {
+  var Computer = function() {
     var thisRoll = rollDie();
     if (thisRoll === 1) {
       $("span.roundScore3").text("");
       $("button#roll3").hide();
       $("span.roundColor3").show();
-      $("span.roundColor3").text("You rolled a 1, your turn is over!");
-      $("button.okayThree").show();
+      $("span.roundColor3").text("Computer rolled a 1, the Computer's turn is over!");
       playerThree.resultsArray = [];
       $("span.currentScore3").text("1");
     } else {
@@ -171,22 +170,15 @@ $(document).ready(function() {
       $("span.currentScore3").text(thisRoll);
       $("span.roundScore3").text(playerThree.resultsArray + " " + "=" + " " + playerThree.calcSum());
     }
-  });
-
-  $("button.okayThree").click(function(){
     playerThree.total += playerThree.calcSum();
     $("span.playerThreeTotal").text(playerThree.total);
     $("button#roll1").show();
-    $(".playerOne").toggle();
-    $(".playerThree").toggle();
+    // $(".playerOne").toggle();
+    // $(".playerThree").toggle();
     $("span.roundScore3").text("");
     $("span.currentScore3").text("");
     $("button.okayThree").hide();
     $("span.roundColor3").hide();
-  });
-
-
-  $("button#hold3").click(function() {
     playerThree.total += playerThree.calcSum();
     playerThree.resultsArray = [];
     $("button#roll1").show();
@@ -201,10 +193,14 @@ $(document).ready(function() {
       $("#playerThreeWins").show();
       playerOne.total = 0;
       playerThree.total = 0;
-      $("button#roll1").hide();
-      $("button#hold1").hide();
+      // $("button#roll1").hide();
+      // $("button#hold1").hide();
     }
-  });
+  };
+  //COMPUTER FUNCTIONS
+
+
+
 
 
   $(".newgame").click(function(){
