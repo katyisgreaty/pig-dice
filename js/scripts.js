@@ -60,6 +60,15 @@ $(document).ready(function() {
     $(".playerTwo").toggle();
   });
 
+  $("#newgame").click(function(){
+      $("span.playerOneTotal").text("");
+      $("span.playerTwoTotal").text("");
+      $("span.currentScore1").text("");
+      $("span.currentScore2").text("");
+      $("span.roundScore1").text("");
+      $("span.roundScore").text("");
+  });
+
 
 
 
