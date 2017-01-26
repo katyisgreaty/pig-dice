@@ -1,12 +1,21 @@
-.playerTwo {
+.playerTwo, .playerThree {
   display: none;
 }
 
-.roundColor, .roundColor2 {
+.roundColor, .roundColor2, .roundColor3 {
   color: black;
   font-family: 'Josefin Slab', serif;
   font-size: 30px;
   font-weight: bolder;
+}
+
+.onePlayer, .twoPlayer {
+  margin-left: 40%;
+  font-size: 40px;
+}
+
+h2 {
+  text-align: center;
 }
 
 div.user {
@@ -17,12 +26,25 @@ div.computer {
   display: none;
 }
 
-#playerOneWins {
+.playerOneWins {
   display: none;
+  font-family: 'Josefin Slab', serif;
+  text-align: center;
+  font-weight: bolder;
 }
 
  #playerTwoWins {
    display: none;
+   font-family: 'Josefin Slab', serif;
+   text-align: center;
+   font-weight: bolder;
+ }
+
+ #playerThreeWins {
+   display: none;
+   font-family: 'Josefin Slab', serif;
+   text-align: center;
+   font-weight: bolder;
  }
 
  .okayOne {
@@ -35,11 +57,16 @@ div.computer {
    font-size: 20px;
  }
 
+ .okayThree {
+   display: none;
+   font-size: 20px;
+ }
+
 .reset {
   margin-top: 60px;
 }
 
-#hold1, #hold2, #roll1, #roll2, .newgame {
+#hold1, #hold2, #hold3, #roll1, #roll2, #roll3, .newgame {
   font-size: 20px;
 }
 
@@ -77,7 +104,7 @@ div.computer {
   font-size: 30px;
 }
 
-.roundScore1, .roundScore2 {
+.roundScore1, .roundScore2, .roundScore3 {
   font-family: 'Josefin Slab', serif;
   font-weight: bolder;
 }
@@ -115,6 +142,19 @@ font-size: 38px;
 border-radius: 20px;
 }
 
+.profile3 {
+background-image: url("https://www.funpugs.com/wordpress/wp-content/uploads/2015/10/MOUSEMAT_FINAL-3.png");
+background-position: center;
+background-size: 120%;
+min-height: 300px;
+text-align: center;
+padding-top: 360px;
+font-family: 'Josefin Slab', serif;
+font-weight: bolder;
+font-size: 38px;
+border-radius: 20px;
+}
+
 .bold {
   font-size: 50px;
 }
@@ -144,18 +184,14 @@ border-radius: 20px;
   font-weight: bolder;
 }
 
-.currentScore2 {
+.currentScore2, .currentScore3 {
   font-family: 'Fontdiner Swanky', cursive;
   font-size: 50px;
   font-weight: bolder;
 }
 
-.playerOneTotal, .playerTwoTotal {
+.playerOneTotal, .playerTwoTotal, .playerThreeTotal {
   font-family: 'Fontdiner Swanky', cursive;
   font-size: 50px;
   font-weight: bolder;
-}
-
-.roll, .hold {
-
 }

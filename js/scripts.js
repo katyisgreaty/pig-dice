@@ -23,6 +23,7 @@ Player.prototype.calcSum = function() {
 $(document).ready(function() {
   var playerOne = new Player();
   var playerTwo = new Player();
+  var playerThree = new Player();
 
   $("button.onePlayer").click(function() {
     $("div.computer").show();
@@ -58,8 +59,10 @@ $(document).ready(function() {
     playerOne.total += playerOne.calcSum();
     $("span.playerOneTotal").text(playerOne.total);
     $("button#roll2").show();
+    $("button#roll3").show();
     $(".playerOne").toggle();
     $(".playerTwo").toggle();
+    $(".playerThree").toggle();
     $("span.roundScore1").text("");
     $("span.currentScore1").text("");
     $("button.okayOne").hide();
@@ -70,19 +73,24 @@ $(document).ready(function() {
     playerOne.total += playerOne.calcSum();
     playerOne.resultsArray = [];
     $("button#roll2").show();
+    $("button#roll3").show();
     $("span.currentScore1").text("");
     $("span.roundScore1").text("");
     $("span.playerOneTotal").text(playerOne.total);
     $("button.okayOne").hide();
     $(".playerOne").toggle();
     $(".playerTwo").toggle();
+    $(".playerThree").toggle();
     if (playerOne.total >= 100) {
       $("span.playerOneTotal").text(playerOne.total);
-      $("#playerOneWins").show();
+      $(".playerOneWins").show();
       playerOne.total = 0;
       playerTwo.total = 0;
+      playerThree.total = 0;
       $("button#roll2").hide();
       $("button#hold2").hide();
+      $("button#roll3").hide();
+      $("button#hold3").hide();
     }
   });
 
@@ -137,23 +145,92 @@ $(document).ready(function() {
   });
 
 
+
+
+
+
+
+
+
+
+
+  //COMPUTER FUNCTIONS
+
+  $("button#roll3").click(function() {
+    var thisRoll = rollDie();
+    if (thisRoll === 1) {
+      $("span.roundScore3").text("");
+      $("button#roll3").hide();
+      $("span.roundColor3").show();
+      $("span.roundColor3").text("You rolled a 1, your turn is over!");
+      $("button.okayThree").show();
+      playerThree.resultsArray = [];
+      $("span.currentScore3").text("1");
+    } else {
+      playerThree.resultsArray.push(" " + thisRoll);
+      $("span.currentScore3").text(thisRoll);
+      $("span.roundScore3").text(playerThree.resultsArray + " " + "=" + " " + playerThree.calcSum());
+    }
+  });
+
+  $("button.okayThree").click(function(){
+    playerThree.total += playerThree.calcSum();
+    $("span.playerThreeTotal").text(playerThree.total);
+    $("button#roll1").show();
+    $(".playerOne").toggle();
+    $(".playerThree").toggle();
+    $("span.roundScore3").text("");
+    $("span.currentScore3").text("");
+    $("button.okayThree").hide();
+    $("span.roundColor3").hide();
+  });
+
+
+  $("button#hold3").click(function() {
+    playerThree.total += playerThree.calcSum();
+    playerThree.resultsArray = [];
+    $("button#roll1").show();
+    $("span.currentScore3").text("");
+    $("span.roundScore3").text("");
+    $("span.playerThreeTotal").text(playerThree.total);
+    $("button.okayThree").hide();
+    $(".playerOne").toggle();
+    $(".playerThree").toggle();
+    if (playerThree.total >= 100) {
+      $("span.playerThreeTotal").text(playerThree.total);
+      $("#playerThreeWins").show();
+      playerOne.total = 0;
+      playerThree.total = 0;
+      $("button#roll1").hide();
+      $("button#hold1").hide();
+    }
+  });
+
+
   $(".newgame").click(function(){
     $("span.playerOneTotal").text("");
     $("span.playerTwoTotal").text("");
+    $("span.playerThreeTotal").text("");
     $("span.currentScore1").text("");
     $("span.currentScore2").text("");
+    $("span.currentScore3").text("");
     $("span.roundScore1").text("");
     $("span.roundScore").text("");
-    $("span#playerOneWins").hide();
+    $("span.roundScore3").text("");
+    $("span.playerOneWins").hide();
     $("span#playerTwoWins").hide();
+    $("span#playerThreeWins").hide();
     $("button#roll1").show();
     $("button#hold1").show();
     $("button#roll2").show();
     $("button#hold2").show();
+    $("button#roll3").show();
+    $("button#hold3").show();
     $("div.user").hide();
     $("div.computer").hide();
     $("div.choice").show();
     playerOne.total = 0;
     playerTwo.total = 0;
+    playerThree.total = 0;
   });
 });

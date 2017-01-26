@@ -14,15 +14,15 @@
 <body>
   <h1 class = "jumbotron center">Pug Dice</h1>
   <div class="container choice">
-    <button type = "submit" class = "buttons btn btn-primary onePlayer">One Player</button>
-    <button type = "submit" class = "buttons btn btn-primary twoPlayer">Two Player</button>
+    <button type = "submit" class = "buttons btn btn-danger onePlayer">One Player</button>
+    <button type = "submit" class = "buttons btn btn-info twoPlayer">Two Player</button>
   </div>
   <div class="container user">
     <div class="row">
       <div class="col-md-6">
         <h3 class = "center profile1">Player 1 total:</h3>
         <h4 class = "center space"><span class = "bold playerOneTotal"></span></h4>
-        <h2><span id = "playerOneWins">Player 1 wins!!!</span></h2>
+        <h2><span class = "playerOneWins">Player 1 wins!!!</span></h2>
       </div>
       <div class="col-md-6">
         <h3 class = "center profile2">Player 2 total:</h3>
@@ -81,12 +81,12 @@
       <div class="col-md-6">
         <h3 class = "center profile1">Pug 1 total:</h3>
         <h4 class = "center space"><span class = "bold playerOneTotal"></span></h4>
-        <h2><span id = "playerOneWins">Pug 1 wins!!!</span></h2>
+        <h2><span class = "playerOneWins">Pug 1 wins!!!</span></h2>
       </div>
       <div class="col-md-6">
-        <h3 class = "center profile2">Computer total:</h3>
-        <h4 class = "center space"><span class = "bold playerTwoTotal"></span></h4>
-        <h2><span id = "playerTwoWins">Computer wins!!!</span></h2>
+        <h3 class = "center profile3">Computer total:</h3>
+        <h4 class = "center space"><span class = "bold playerThreeTotal"></span></h4>
+        <h2><span id = "playerThreeWins">Computer wins!!!</span></h2>
       </div>
     </div>
     <div class = "playerOne">
@@ -110,21 +110,21 @@
         <button type="submit" name="reset" class = "btn btn-warning reset newgame">Start a New Game!</button>
       </div>
     </div>
-    <div class= "playerTwo">
+    <div class= "playerThree">
       <div class="row">
         <h4 class = "center round-score"><span class = "textColor2">Computer</span> score this round:</h4>
-        <h3 class = "center space"><span class = "roundScore2"></span><span class= "roundColor2"></span><br><button type = "submit" class = "buttons okayTwo btn btn-primary">Woof! Okay!</button></h3>
+        <h3 class = "center space"><span class = "roundScore3"></span><span class= "roundColor3"></span><br><button type = "submit" class = "buttons okayThree btn btn-primary">Woof! Okay!</button></h3>
       </div>
       <div class="row">
         <h2 class = "center dice">The dice landed on:</h2>
-        <h1 class = "center spaceSpecial"><span class = "currentScore2"></span></h1>
+        <h1 class = "center spaceSpecial"><span class = "currentScore3"></span></h1>
       </div>
       <div class="row">
         <div class="col-md-6 buttons">
-          <button type="submit" name="roll" class="btn btn-success roll" id = "roll2">Roll the Dice!</button>
+          <button type="submit" name="roll" class="btn btn-success roll" id = "roll3">Roll the Dice!</button>
         </div>
         <div class = "col-md-6 buttons">
-          <button type="submit" name="hold" class="btn btn-danger hold" id = "hold2">Hold</button>
+          <button type="submit" name="hold" class="btn btn-danger hold" id = "hold3">Hold</button>
         </div>
       </div>
       <div class="row buttons">
