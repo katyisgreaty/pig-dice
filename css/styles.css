@@ -2,6 +2,10 @@
   display: none;
 }
 
+.roundColor, .roundColor2 {
+  color: red;
+}
+
 #playerOneWins {
   display: none;
 }

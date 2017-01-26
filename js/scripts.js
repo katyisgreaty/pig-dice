@@ -27,7 +27,9 @@ $(document).ready(function() {
   $("button#roll1").click(function() {
     var thisRoll = rollDie();
     if (thisRoll === 1) {
-      $("span.roundScore1").text("You rolled a 1, your turn is over!");
+      $("span.roundScore1").text("");
+      $("span.roundColor").show();
+      $("span.roundColor").text("You rolled a 1, your turn is over!");
 
       $("button.okayOne").show();
       playerOne.resultsArray = [];
@@ -46,6 +48,7 @@ $(document).ready(function() {
     $("span.roundScore1").text("");
     $("span.currentScore1").text("");
     $("button.okayOne").hide();
+    $("span.roundColor").hide();
   });
 
   $("button#hold1").click(function() {
@@ -70,7 +73,9 @@ $(document).ready(function() {
   $("button#roll2").click(function() {
     var thisRoll = rollDie();
     if (thisRoll === 1) {
-      $("span.roundScore2").text("You rolled a 1, your turn is over!");
+      $("span.roundScore2").text("");
+      $("span.roundColor2").show();
+      $("span.roundColor2").text("You rolled a 1, your turn is over!");
       $("button.okayTwo").show();
       playerTwo.resultsArray = [];
       $("span.currentScore2").text("1");
@@ -89,6 +94,7 @@ $(document).ready(function() {
     $("span.roundScore2").text("");
     $("span.currentScore2").text("");
     $("button.okayTwo").hide();
+    $("span.roundColor2").hide();
   });
 
 
