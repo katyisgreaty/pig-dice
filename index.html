@@ -13,7 +13,11 @@
 </head>
 <body>
   <h1 class = "jumbotron center">Pug Dice</h1>
-  <div class="container">
+  <div class="container choice">
+    <button type = "submit" class = "buttons btn btn-primary onePlayer">One Player</button>
+    <button type = "submit" class = "buttons btn btn-primary twoPlayer">Two Player</button>
+  </div>
+  <div class="container user">
     <div class="row">
       <div class="col-md-6">
         <h3 class = "center profile1">Player 1 total:</h3>
@@ -29,7 +33,7 @@
     <div class = "playerOne">
       <div class="row">
         <h4 class = "center round-score"><span class = "textColor1">Player One</span> score this round:</h4>
-        <h3 class = "center space"><span class = "roundScore1"></span><span class= "roundColor"></span><br><button type = "submit" class = "buttons okayOne btn btn-primary">Darn! Okay</button></h3>
+        <h3 class = "center space"><span class = "roundScore1"></span><span class= "roundColor"></span><br><button type = "submit" class = "buttons okayOne btn btn-primary">Bark! Bark! Okay!</button></h3>
       </div>
       <div class="row">
         <h2 class = "center dice">The dice landed on:</h2>
@@ -50,7 +54,7 @@
     <div class= "playerTwo">
       <div class="row">
         <h4 class = "center round-score"><span class = "textColor2">Player Two</span> score this round:</h4>
-        <h3 class = "center space"><span class = "roundScore2"></span><span class= "roundColor2"></span><br><button type = "submit" class = "buttons okayTwo btn btn-primary">Darn! Okay</button></h3>
+        <h3 class = "center space"><span class = "roundScore2"></span><span class= "roundColor2"></span><br><button type = "submit" class = "buttons okayTwo btn btn-primary">Woof! Okay!</button></h3>
       </div>
       <div class="row">
         <h2 class = "center dice">The dice landed on:</h2>
@@ -65,7 +69,66 @@
         </div>
       </div>
       <div class="row buttons">
-        <button type="submit" name="reset" class = "btn btn-warning reset newgame">Start a new game</button>
+        <button type="submit" name="reset" class = "btn btn-warning reset newgame">Start a new game!</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container computer">
+    <div class="row">
+      <div class="col-md-6">
+        <h3 class = "center profile1">Pug 1 total:</h3>
+        <h4 class = "center space"><span class = "bold playerOneTotal"></span></h4>
+        <h2><span id = "playerOneWins">Pug 1 wins!!!</span></h2>
+      </div>
+      <div class="col-md-6">
+        <h3 class = "center profile2">Computer total:</h3>
+        <h4 class = "center space"><span class = "bold playerTwoTotal"></span></h4>
+        <h2><span id = "playerTwoWins">Computer wins!!!</span></h2>
+      </div>
+    </div>
+    <div class = "playerOne">
+      <div class="row">
+        <h4 class = "center round-score"><span class = "textColor1">Pug One</span> score this round:</h4>
+        <h3 class = "center space"><span class = "roundScore1"></span><span class= "roundColor"></span><br><button type = "submit" class = "buttons okayOne btn btn-primary">Bark! Bark! Okay!</button></h3>
+      </div>
+      <div class="row">
+        <h2 class = "center dice">The dice landed on:</h2>
+        <h1 class = "center spaceSpecial"><span class = "currentScore1"></span></h1>
+      </div>
+      <div class="row">
+        <div class="col-md-6 buttons">
+          <button type="submit" name="roll" class="btn btn-success roll" id = "roll1">Roll the Dice!</button>
+        </div>
+        <div class = "col-md-6 buttons">
+          <button type="submit" name="hold" class="btn btn-danger hold" id = "hold1">Hold!</button>
+        </div>
+      </div>
+      <div class="row buttons">
+        <button type="submit" name="reset" class = "btn btn-warning reset newgame">Start a New Game!</button>
+      </div>
+    </div>
+    <div class= "playerTwo">
+      <div class="row">
+        <h4 class = "center round-score"><span class = "textColor2">Computer</span> score this round:</h4>
+        <h3 class = "center space"><span class = "roundScore2"></span><span class= "roundColor2"></span><br><button type = "submit" class = "buttons okayTwo btn btn-primary">Woof! Okay!</button></h3>
+      </div>
+      <div class="row">
+        <h2 class = "center dice">The dice landed on:</h2>
+        <h1 class = "center spaceSpecial"><span class = "currentScore2"></span></h1>
+      </div>
+      <div class="row">
+        <div class="col-md-6 buttons">
+          <button type="submit" name="roll" class="btn btn-success roll" id = "roll2">Roll the Dice!</button>
+        </div>
+        <div class = "col-md-6 buttons">
+          <button type="submit" name="hold" class="btn btn-danger hold" id = "hold2">Hold</button>
+        </div>
+      </div>
+      <div class="row buttons">
+        <button type="submit" name="reset" class = "btn btn-warning reset newgame">Start a new game!</button>
       </div>
     </div>
   </div>

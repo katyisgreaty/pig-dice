@@ -24,10 +24,24 @@ $(document).ready(function() {
   var playerOne = new Player();
   var playerTwo = new Player();
 
+  $("button.onePlayer").click(function() {
+    $("div.computer").show();
+    $("div.user").hide();
+    $("div.choice").hide();
+  });
+
+  $("button.twoPlayer").click(function() {
+    $("div.user").show();
+    $("div.computer").hide();
+    $("div.choice").hide();
+  });
+
+
   $("button#roll1").click(function() {
     var thisRoll = rollDie();
     if (thisRoll === 1) {
       $("span.roundScore1").text("");
+      $("button#roll1").hide();
       $("span.roundColor").show();
       $("span.roundColor").text("You rolled a 1, your turn is over!");
 
@@ -43,6 +57,7 @@ $(document).ready(function() {
   $("button.okayOne").click(function(){
     playerOne.total += playerOne.calcSum();
     $("span.playerOneTotal").text(playerOne.total);
+    $("button#roll2").show();
     $(".playerOne").toggle();
     $(".playerTwo").toggle();
     $("span.roundScore1").text("");
@@ -54,6 +69,7 @@ $(document).ready(function() {
   $("button#hold1").click(function() {
     playerOne.total += playerOne.calcSum();
     playerOne.resultsArray = [];
+    $("button#roll2").show();
     $("span.currentScore1").text("");
     $("span.roundScore1").text("");
     $("span.playerOneTotal").text(playerOne.total);
@@ -74,6 +90,7 @@ $(document).ready(function() {
     var thisRoll = rollDie();
     if (thisRoll === 1) {
       $("span.roundScore2").text("");
+      $("button#roll2").hide();
       $("span.roundColor2").show();
       $("span.roundColor2").text("You rolled a 1, your turn is over!");
       $("button.okayTwo").show();
@@ -89,6 +106,7 @@ $(document).ready(function() {
   $("button.okayTwo").click(function(){
     playerTwo.total += playerTwo.calcSum();
     $("span.playerTwoTotal").text(playerTwo.total);
+    $("button#roll1").show();
     $(".playerOne").toggle();
     $(".playerTwo").toggle();
     $("span.roundScore2").text("");
@@ -101,6 +119,7 @@ $(document).ready(function() {
   $("button#hold2").click(function() {
     playerTwo.total += playerTwo.calcSum();
     playerTwo.resultsArray = [];
+    $("button#roll1").show();
     $("span.currentScore2").text("");
     $("span.roundScore2").text("");
     $("span.playerTwoTotal").text(playerTwo.total);
@@ -131,6 +150,9 @@ $(document).ready(function() {
     $("button#hold1").show();
     $("button#roll2").show();
     $("button#hold2").show();
+    $("div.user").hide();
+    $("div.computer").hide();
+    $("div.choice").show();
     playerOne.total = 0;
     playerTwo.total = 0;
   });

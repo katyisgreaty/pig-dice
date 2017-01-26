@@ -3,7 +3,18 @@
 }
 
 .roundColor, .roundColor2 {
-  color: red;
+  color: black;
+  font-family: 'Josefin Slab', serif;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+div.user {
+  display: none;
+}
+
+div.computer {
+  display: none;
 }
 
 #playerOneWins {
