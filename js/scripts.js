@@ -17,6 +17,7 @@ Player.prototype.calcSum = function() {
   return arraySum;
 }
 
+
 //front-end logic
 
 $(document).ready(function() {
@@ -31,7 +32,6 @@ $(document).ready(function() {
   });
 
   $("button#hold1").click(function() {
-
     playerOne.total += playerOne.calcSum();
     playerOne.resultsArray = [];
     $("span.currentScore1").text("");
@@ -39,7 +39,15 @@ $(document).ready(function() {
     $("span.playerOneTotal").text(playerOne.total);
     $(".playerOne").toggle();
     $(".playerTwo").toggle();
-
+    if (playerOne.total >= 100) {
+      $("span.playerOneTotal").text("");
+      $("span.playerTwoTotal").text("");
+      $("span.currentScore1").text("");
+      $("span.currentScore2").text("");
+      $("span.roundScore1").text("");
+      $("span.roundScore").text("");
+      alert ("Player 1 wins!!!");
+    }
   });
 
   $("button#roll2").click(function() {
@@ -50,7 +58,6 @@ $(document).ready(function() {
   });
 
   $("button#hold2").click(function() {
-
     playerTwo.total += playerTwo.calcSum();
     playerTwo.resultsArray = [];
     $("span.currentScore2").text("");
@@ -58,7 +65,17 @@ $(document).ready(function() {
     $("span.playerTwoTotal").text(playerTwo.total);
     $(".playerOne").toggle();
     $(".playerTwo").toggle();
-  });
+    if (playerTwo.total >= 100) {
+      $("span.playerOneTotal").text("");
+      $("span.playerTwoTotal").text("");
+      $("span.currentScore1").text("");
+      $("span.currentScore2").text("");
+      $("span.roundScore1").text("");
+      $("span.roundScore").text("");
+      alert ("Player 2 wins!!!");
+      };
+    });
+
 
   $("#newgame").click(function(){
       $("span.playerOneTotal").text("");
@@ -68,9 +85,4 @@ $(document).ready(function() {
       $("span.roundScore1").text("");
       $("span.roundScore").text("");
   });
-
-
-
-
-
 });
