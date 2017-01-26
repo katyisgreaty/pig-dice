@@ -3,6 +3,9 @@
 function rollDie() {
   return Math.floor( Math.random() * ( 1 + 6 - 1 ) ) + 1;
 }
+// if (rollDie === 1) {
+//   alert("Your turn is over!")
+// }
 
 function Player() {
   this.resultsArray = [];
@@ -37,17 +40,20 @@ $(document).ready(function() {
     $("span.currentScore1").text("");
     $("span.roundScore1").text("");
     $("span.playerOneTotal").text(playerOne.total);
-    $(".playerOne").toggle();
-    $(".playerTwo").toggle();
     if (playerOne.total >= 100) {
+      $("span.playerOneTotal").text(playerOne.total);
       $("span.playerOneTotal").text("");
       $("span.playerTwoTotal").text("");
       $("span.currentScore1").text("");
       $("span.currentScore2").text("");
       $("span.roundScore1").text("");
       $("span.roundScore").text("");
-      alert ("Player 1 wins!!!");
+      alert ("Player 1 wins with a score of " + playerOne.total + "!!!");
+      playerOne.total = 0;
+      playerTwo.total = 0;
     }
+    $(".playerOne").toggle();
+    $(".playerTwo").toggle();
   });
 
   $("button#roll2").click(function() {
@@ -72,7 +78,9 @@ $(document).ready(function() {
       $("span.currentScore2").text("");
       $("span.roundScore1").text("");
       $("span.roundScore").text("");
-      alert ("Player 2 wins!!!");
+      alert ("Player 2 wins with a score of " + playerTwo.total + "!!!");
+      playerOne.total = 0;
+      playerTwo.total = 0;
       };
     });
 
