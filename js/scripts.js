@@ -35,9 +35,9 @@ $(document).ready(function() {
         $(".playerTwo").toggle();
         $("span.roundScore1").text("");
         $("button.okayOne").hide();
+        playerOne.resultsArray = [];
       });
-      // $(".playerOne").toggle();
-      // $(".playerTwo").toggle();
+
 
     } else {
     playerOne.resultsArray.push(" " + thisRoll);
@@ -66,10 +66,22 @@ $(document).ready(function() {
 
   $("button#roll2").click(function() {
     var thisRoll = rollDie();
+    if (thisRoll === 1) {
+      $("span.roundScore2").text("You rolled a 1, your turn is over!");
+      $("button.okayTwo").show();
+      $("button.okayTwo").click(function(){
+        $(".playerOne").toggle();
+        $(".playerTwo").toggle();
+        $("span.roundScore2").text("");
+        $("button.okayTwo").hide();
+        playerTwo.resultsArray = [];
+      });
+    };
     playerTwo.resultsArray.push(" " + thisRoll);
     $("span.currentScore2").text(thisRoll);
     $("span.roundScore2").text(playerTwo.resultsArray + " " + "=" + " " + playerTwo.calcSum());
   });
+
 
   $("button#hold2").click(function() {
     playerTwo.total += playerTwo.calcSum();
