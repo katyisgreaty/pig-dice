@@ -34,6 +34,7 @@ $(document).ready(function() {
         $(".playerOne").toggle();
         $(".playerTwo").toggle();
         $("span.roundScore1").text("");
+        $("span.currentScore1").text("");
         $("button.okayOne").hide();
         playerOne.resultsArray = [];
       });
@@ -73,6 +74,7 @@ $(document).ready(function() {
         $(".playerOne").toggle();
         $(".playerTwo").toggle();
         $("span.roundScore2").text("");
+        $("span.currentScore2").text("");
         $("button.okayTwo").hide();
         playerTwo.resultsArray = [];
       });

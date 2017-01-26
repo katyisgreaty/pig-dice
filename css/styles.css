@@ -12,10 +12,12 @@
 
  .okayOne {
    display: none;
+   font-size: 20px;
  }
 
  .okayTwo {
    display: none;
+   font-size: 20px;
  }
 
 .reset {
