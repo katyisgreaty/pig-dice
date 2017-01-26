@@ -3,9 +3,7 @@
 function rollDie() {
   return Math.floor( Math.random() * ( 1 + 6 - 1 ) ) + 1;
 }
-// if (rollDie === 1) {
-//   alert("Your turn is over!")
-// }
+
 
 function Player() {
   this.resultsArray = [];
@@ -29,9 +27,23 @@ $(document).ready(function() {
 
   $("button#roll1").click(function() {
     var thisRoll = rollDie();
+    if (thisRoll === 1) {
+      $("span.roundScore1").text("You rolled a 1, your turn is over!");
+      $("button.okayOne").show();
+      $("button.okayOne").click(function(){
+        $(".playerOne").toggle();
+        $(".playerTwo").toggle();
+        $("span.roundScore1").text("");
+        $("button.okayOne").hide();
+      });
+      // $(".playerOne").toggle();
+      // $(".playerTwo").toggle();
+
+    } else {
     playerOne.resultsArray.push(" " + thisRoll);
     $("span.currentScore1").text(thisRoll);
     $("span.roundScore1").text(playerOne.resultsArray + " " + "=" + " " + playerOne.calcSum());
+    }
   });
 
   $("button#hold1").click(function() {
