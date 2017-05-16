@@ -27,11 +27,6 @@ _Pig is one of a family of dice games described by Reiner Knizia as "jeopardy di
 * _If player rolls a "1", their turn is over and their turn score is not added to their total score_
 * _Whichever player reaches a total score of 100 first wins_
 
-
-## Known Bugs
-
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
-
 ## Support and contact details
 
 _For questions contact us at katy.daviscourt@gmail.com or cassiemusolf@gmail.com_
